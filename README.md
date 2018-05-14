@@ -24,8 +24,11 @@ Co zrobione:
 Co do zrobienia:
 
 -Uzupełnienie instrucji obsługi,
--Dodanie odpowiednich funkcji uruchamiających poszczególne okienka do przycisków w głównym oknie, 
+
+-Dodanie odpowiednich funkcji uruchamiających poszczególne okienka do przycisków w głównym oknie,
+
 -Porównywanie formularza uzytkownika z bazą książek oraz wpisanie jej do listy wyświtlającej się użytkownikowi, 
+
 -Dodanie funkcji dzięki której użytkownik zaznacza które książki już przeczytał i po kliknięciu przycisku "zapisz zmiany" usuwa trwale z listy książki które użytkownik przeczytał, jednocześnie tworzy się lista książek przeczytanych. Użytkownik będzie miał możliwośc sprawdzenia które książki juz przeczytał i lista będzie wyświetlana na ekranie.
 
 
