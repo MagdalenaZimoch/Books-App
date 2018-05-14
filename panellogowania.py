@@ -1,33 +1,48 @@
-# -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'panellogowania.ui'
-#
-# Created by: PyQt5 UI code generator 5.6
-#
-# WARNING! All changes made in this file will be lost!
-
 from PyQt5 import QtCore, QtGui, QtWidgets
+from przywitanie1 import Ui_Youbook
 from panelrejestracji import Ui_panelrejestracji
+#import time
 import sqlite3
 
 class Ui_PanelLogowania(object):
+
+    def openYoubook(self):
+        self.welcomewindow = QtWidgets.QMainWindow()
+        self.ui     = Ui_Youbook()
+        self.ui.setupUi(self.welcomewindow)
+        self.welcomewindow.show()
+
+
     def openWindow(self):
         self.window = QtWidgets.QWidget()
-        self.ui = Ui_panelrejestracji()
+        self.ui     = Ui_panelrejestracji()
         self.ui.setupUi(self.window)
-        PanelLogowania.hide()
         self.window.show()
 
     def sprawdzlogin(self):
         connection = sqlite3.connect("login.db")
-        username = self.wpisanyLogin.text()
-        password = self.wpisanyHaslo.text()
-        email = self.wpisanyAdresEmail.text()
-        result = connection.execute("SELECT * FROM USERS WHERE USERNAME = ? AND EMAIL = ? AND PASSWORD = ?",(username,email,password))
+        username   = self.wpisanyLogin.text()
+        password   = self.wpisanyHaslo.text()
+        email      = self.wpisanyAdresEmail.text()
+        result     = connection.execute("SELECT * FROM USERS WHERE USERNAME = ? AND EMAIL = ? AND PASSWORD = ?",(username,email,password))
         if(len(result.fetchall())>0):
             print("znaleziono uzytkownika")
+            connection.execute("UPDATE USERS SET ZALOGOWANY=(?) WHERE ZALOGOWANY=(?);",("0","1"))
+            #print("pierwsze zrobione")
+            result = connection.execute("SELECT * FROM USERS WHERE USERNAME = ? AND EMAIL = ? AND PASSWORD = ?",
+                                        (username, email, password))
+            for nazwa in result:
+                connection.execute("UPDATE USERS SET ZALOGOWANY=(?) WHERE USERNAME=(?);",("1",nazwa[0]))
+                #time.sleep(1)
+            connection.commit()
+            connection.close()
+            PanelLogowania.hide()
+            self.openYoubook()
+
         else:
             print('nie znaleziono')
+            connection.commit()
+            connection.close()
 
     def setupUi(self, PanelLogowania):
         PanelLogowania.setObjectName("PanelLogowania")
@@ -120,7 +135,7 @@ class Ui_PanelLogowania(object):
 
     def retranslateUi(self, PanelLogowania):
         _translate = QtCore.QCoreApplication.translate
-        PanelLogowania.setWindowTitle(_translate("PanelLogowania", "Form"))
+        PanelLogowania.setWindowTitle(_translate("PanelLogowania", "BOOK&YOU"))
         self.NapisPanelLogowania.setText(_translate("PanelLogowania", "PANEL LOGOWANIA"))
         self.Napislogin.setText(_translate("PanelLogowania", "LOGIN"))
         self.napisadresemail.setText(_translate("PanelLogowania", "ADRES E-MAIL"))

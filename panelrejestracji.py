@@ -1,42 +1,55 @@
-# -*- coding: utf-8 -*-
-# Form implementation generated from reading ui file 'panelrejestracji.ui'
-#
-# Created by: PyQt5 UI code generator 5.6
-#
-# WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sqlite3
+import win32api
 
 class Ui_panelrejestracji(object):
+
     def saveuser(self):
         username = self.wpisanyLogin.text()
         password = self.wpisanyHaslo.text()
         email = self.wpisanyAdresEmail.text()
         password2 = self.wpisanyPowtorzHaslo.text()
         #łączymy się z bazą danych
-        connection = sqlite3.connect("login.db")
+        con = sqlite3.connect("login.db")
+
         # sprawdzamy czy podany login jest juz w baze danych
-        result = connection.execute("SELECT * FROM USERS")
-        print(result)
+        result = con.execute("SELECT * FROM USERS")
         taken = 0
         for data in result:
-            print(data[0])
+
             if (username == data[0]):
-                print("znaleziono uzytkownika o takiej samej nazwie, zmień login !")
+                win32api.MessageBox(0, 'znaleziono uzytkownika o takiej samej nazwie, zmień login !', 'Błąd rejestracji', 0x00001000)
                 taken = 1
+                con.close()
                 break
             else:
-                print('NIE ZNALEZIONO')
+                continue
+
         if (taken == 0):
             if (password == password2):
-                connection.execute("INSERT INTO USERS VALUES (?,?,?)", (username, email, password))
-                connection.commit()
-                print("DODANO UŻYTKOWNIKA")
+                con.execute("INSERT INTO USERS VALUES (?,?,?,?);", (username, email, password,"0"))
+                con.commit()
+                con.close()
+                win32api.MessageBox(0, 'Użytkownik dodany poprawnie :), teraz się zaloguj', 'Brawo!', 0x00001000)
+                #print(username)
+                con2 = sqlite3.connect("formularze.db")
+                #print(type(username))
+                try:
+                    con2.execute("INSERT INTO FORMULARZE(USERNAME) VALUES(?);", ("0"))
+                    con2.execute("UPDATE FORMULARZE SET USERNAME=? WHERE USERNAME=?",(username,"0"))
+                except:
+                    print("nie udało sie!")
+                con2.commit()
+                con2.close()
+
+
 
             else:
-                print('PODANE HASŁA NIE SĄ TAKIE SAME !')
-        connection.close()
+                win32api.MessageBox(0, 'PODANE HASŁA NIE SĄ TAKIE SAME !', 'Błąd rejestracji', 0x00001000)
+                con.close()
+
+
 
 
 
@@ -131,7 +144,7 @@ class Ui_panelrejestracji(object):
 
     def retranslateUi(self, panelrejestracji):
         _translate = QtCore.QCoreApplication.translate
-        panelrejestracji.setWindowTitle(_translate("panelrejestracji", "PANEL REJESTRACJI"))
+        panelrejestracji.setWindowTitle(_translate("panelrejestracji", "BOOK&YOU"))
         self.napisRejestracja.setText(_translate("panelrejestracji", "STWÓRZ NOWE KONTO"))
         self.Napislogin.setText(_translate("panelrejestracji", "LOGIN"))
         self.napisadresemail.setText(_translate("panelrejestracji", "ADRES E-MAIL"))
