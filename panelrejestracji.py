@@ -1,4 +1,3 @@
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sqlite3
 import win32api
@@ -35,9 +34,11 @@ class Ui_panelrejestracji(object):
                 #print(username)
                 con2 = sqlite3.connect("formularze.db")
                 #print(type(username))
+
                 try:
                     con2.execute("INSERT INTO FORMULARZE(USERNAME) VALUES(?);", ("0"))
                     con2.execute("UPDATE FORMULARZE SET USERNAME=? WHERE USERNAME=?",(username,"0"))
+
                 except:
                     print("nie udało sie!")
                 con2.commit()
@@ -55,7 +56,9 @@ class Ui_panelrejestracji(object):
 
     def setupUi(self, panelrejestracji):
         panelrejestracji.setObjectName("panelrejestracji")
-        panelrejestracji.resize(568, 447)
+        panelrejestracji.resize(569, 340)
+        panelrejestracji.setMinimumSize(QtCore.QSize(569, 340))
+        panelrejestracji.setMaximumSize(QtCore.QSize(569, 340))
         panelrejestracji.setStyleSheet("background-color: rgb(248, 120, 120);")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(panelrejestracji)
         self.verticalLayout_3.setObjectName("verticalLayout_3")

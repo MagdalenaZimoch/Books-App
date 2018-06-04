@@ -1,17 +1,16 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from przywitanie1 import Ui_Youbook
+from przywitanie1 import Ui_Youbook2
 from panelrejestracji import Ui_panelrejestracji
-#import time
+
 import sqlite3
 
 class Ui_PanelLogowania(object):
 
     def openYoubook(self):
-        self.welcomewindow = QtWidgets.QMainWindow()
-        self.ui     = Ui_Youbook()
-        self.ui.setupUi(self.welcomewindow)
-        self.welcomewindow.show()
-
+        self.Youbook2 = QtWidgets.QMainWindow()
+        self.ui     = Ui_Youbook2()
+        self.ui.setupUi(self.Youbook2)
+        self.Youbook2.show()
 
     def openWindow(self):
         self.window = QtWidgets.QWidget()
@@ -47,6 +46,8 @@ class Ui_PanelLogowania(object):
     def setupUi(self, PanelLogowania):
         PanelLogowania.setObjectName("PanelLogowania")
         PanelLogowania.resize(569, 340)
+        PanelLogowania.setMinimumSize(QtCore.QSize(569, 340))
+        PanelLogowania.setMaximumSize(QtCore.QSize(569, 340))
         PanelLogowania.setStyleSheet("\n"
 "background-color: rgb(248, 120, 120);")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(PanelLogowania)
