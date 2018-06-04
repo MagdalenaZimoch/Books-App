@@ -20,15 +20,15 @@ Raport 3
 Co zrobione:
 
 -Użytkownik może się zalogować oraz zarejestrować, po dodaniu nowego użytkownika powstaje dla niego pusty formularz w bazie danych. Po zalogowaniu pojawia się powitalne okienko z instrukcją obsługi oraz przyciskami. Formularz przeszukuje baze z książkami i uzupełnia QComboBoxy możliwościami do wyboru np. sprawdza wszystkich autorów i wpisuje je do listy, to samo robi z językami. Po klknięciu "OK" zapisuje odpowiedzi użytkownika do odpowiedniego dla zalogowanego użytkownika wiersza. Stworzony został projekt listy wyświetlanej użytkownikowi z możliwością zaznaczenia poszczególnych pozycji. Wszystkie możliwe okna są 
+-Uzupełnienie instrucji obsługi,
+-Dodanie odpowiednich funkcji uruchamiających poszczególne okienka do przycisków w głównym oknie,
+-Porównywanie formularza uzytkownika z bazą książek oraz wpisanie jej do listy wyświtlającej się użytkownikowi, 
+-Dodanie funkcji dzięki której użytkownik zaznacza które książki już przeczytał i po kliknięciu przycisku wypisują sie one na ekranie.
 
 Co do zrobienia:
 
--Uzupełnienie instrucji obsługi,
-
--Dodanie odpowiednich funkcji uruchamiających poszczególne okienka do przycisków w głównym oknie,
-
--Porównywanie formularza uzytkownika z bazą książek oraz wpisanie jej do listy wyświtlającej się użytkownikowi, 
-
--Dodanie funkcji dzięki której użytkownik zaznacza które książki już przeczytał i po kliknięciu przycisku "zapisz zmiany" usuwa trwale z listy książki które użytkownik przeczytał, jednocześnie tworzy się lista książek przeczytanych. Użytkownik będzie miał możliwośc sprawdzenia które książki juz przeczytał i lista będzie wyświetlana na ekranie.
+-"zapisz zmiany" usuwa trwale z listy książki które użytkownik przeczytał, jednocześnie tworzy się lista książek przeczytanych.
+-Użytkownik będzie miał możliwośc sprawdzenia które książki juz przeczytał i lista będzie wyświetlana na ekranie.
+-udoskonalenie sposobu wyszukiwania odpowiednich książek.
 
 
