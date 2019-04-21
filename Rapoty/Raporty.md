@@ -1,10 +1,10 @@
-> Raport 1
+> ## Raport 1
 
-[] Planuję zrobić aplikację w której użytkownik podaje swoje dane min. zainteresowania, wiek a w rezultacie otrzymuje listę proponowanych książek do przeczytania. 
+[ ] Planuję zrobić aplikację w której użytkownik podaje swoje dane min. zainteresowania, wiek a w rezultacie otrzymuje listę proponowanych książek do przeczytania. 
 
-[] Lista książek będzie pobierana z pliku bądź z bazy SQL, do stworzenia okienka aplikacji planuję użyć biblioteki qt5. Wyniki będą zapisywane do pliku, użytkownik będzie miał możliwość zaznaczenia, które książki już przeczytał i w momencie ponownego odtworzenia aplikacji będzie mógł śledzić swoje postępy. 
+[ ] Lista książek będzie pobierana z pliku bądź z bazy SQL, do stworzenia okienka aplikacji planuję użyć biblioteki qt5. Wyniki będą zapisywane do pliku, użytkownik będzie miał możliwość zaznaczenia, które książki już przeczytał i w momencie ponownego odtworzenia aplikacji będzie mógł śledzić swoje postępy. 
 
-> Raport 2 
+> ## Raport 2 
 
 ### Co zrobione:
 
@@ -14,11 +14,11 @@
 
 ### Co planuję zrobić:
 
-[] Główne okno jest w trakcie realizacji, ponieważ pracuję nad opracowaniem odpowiedniego formularza oraz algorytmu dopasowania książek do użytkownika, więc ciągle się zmienia. 
+[ ] Główne okno jest w trakcie realizacji, ponieważ pracuję nad opracowaniem odpowiedniego formularza oraz algorytmu dopasowania książek do użytkownika, więc ciągle się zmienia. 
 
-[] Dodatkowo pracuje nad odpowiednią bazą danych dla książek.(biorąc pod uwagę to ,że okno formularza cały czas się zmienia, baza danych również się zmienia).
+[ ] Dodatkowo pracuje nad odpowiednią bazą danych dla książek.(biorąc pod uwagę to ,że okno formularza cały czas się zmienia, baza danych również się zmienia).
 
-> Raport 3
+> ## Raport 3
 
 ### Co zrobione:
 
@@ -34,10 +34,10 @@
 
 ### Co do zrobienia:
 
-[] "zapisz zmiany" usuwa trwale z listy książki które użytkownik przeczytał, jednocześnie tworzy się lista książek przeczytanych.
+[ ] "zapisz zmiany" usuwa trwale z listy książki które użytkownik przeczytał, jednocześnie tworzy się lista książek przeczytanych.
 
-[] Użytkownik będzie miał możliwośc sprawdzenia które książki juz przeczytał i lista będzie wyświetlana na ekranie.
+[ ] Użytkownik będzie miał możliwośc sprawdzenia które książki juz przeczytał i lista będzie wyświetlana na ekranie.
 
-[] udoskonalenie sposobu wyszukiwania odpowiednich książek.
+[ ] udoskonalenie sposobu wyszukiwania odpowiednich książek.
 
 
