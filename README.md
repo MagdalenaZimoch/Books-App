@@ -15,3 +15,5 @@ itp.
 Lista książek jest pobierana z bazy danych za pomocą **SQL**, do stworzenia okienka aplikacji planuję użyć zestawu bibliotek **Qt5**. Wyniki zapisywane są do bazy danych dzięki czemu użytkownik ma możliwość zaznaczenia swoich postępów tj. przeczytanych książek. Oznaczone jako przeczytane nie pojawią się w dalszych wyszukiwaniach. 
 
 Język programowania - **Python**.
+
+Status projektu - zakończony.
